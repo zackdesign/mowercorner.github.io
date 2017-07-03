@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include styles.html %}
+    <meta name="description" content="{{ site.description }}">
+    <title>{{ site.title }}</title>
+  </head>
+  <body>
+	<div class="container-fluid">
+        {{ page.content }}
+	</div>
+
+    {% include scripts.html %}
+    
+  </body>
+</html>
