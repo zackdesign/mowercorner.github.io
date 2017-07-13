@@ -6,21 +6,17 @@
     <title>{{ site.title }}</title>
 
     <style>
-      .carousel {
-        border-bottom: 18px solid #ff6e00;
+
+      h1.logo {
+        font-size: 1.8rem;
       }
-      .carousel img {
-        width: 100%;
-        height: 100%;
+
+      .fa-facebook-official.fa-5 {
+        font-size: 2.1rem;
+        float: right;
       }
-      .carousel h2 {
-        text-shadow: 3px 2px #101010;
-        font-size: 3rem;
-      }
+
       .jumbotron.header {
-        z-index: 1;
-        width: 100%;
-        position: absolute;
         color: white;
         /* Fallback for web browsers that don't support RGBa */
         background-color: rgb(0, 0, 0);
@@ -32,6 +28,7 @@
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
         padding: 1rem 2rem;
         border-bottom: 18px solid #ff6e00;
+        margin-bottom: 0;
       }
       .phone {
         font-weight: bold;
@@ -42,11 +39,21 @@
       .jumbotron a:hover {
         text-decoration: underline;
       }
-      .fa-facebook-official.fa-5 {
-        font-size: 4rem;
+
+      .carousel {
+        border-bottom: 18px solid #ff6e00;
+      }
+      .carousel img {
+        width: 100%;
+        height: 100%;
+      }
+      .carousel h2 {
+        text-shadow: 3px 2px #101010;
+        font-size: 3rem;
       }
       .suppliers {
         background: white url("images/DSCF6518c.jpg") no-repeat center right;
+        background-size: cover;
         padding: 1rem 2rem;
       }
       .suppliers .container {
@@ -59,13 +66,15 @@
         /* For IE 8*/
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
         color: white;
-        padding: 1rem 2rem;
+      }
+      .suppliers .container ul {
+        margin: 0;
+        padding: 0;
       }
       .suppliers .container li {
         list-style: none;
         display: inline-block;
-        font-size: 2.5rem;
-        padding: 20px;
+        padding: 5px;
       }
       .jumbotron.footer {
         border-top: 18px solid #ff6e00;
@@ -84,18 +93,54 @@
         width: 100%;
         height: 450px;
       }
+
+      @media (min-width: 576px) {
+        .fa-facebook-official.fa-5 {
+          font-size: 4rem;
+        }
+
+        h1.logo {
+          font-size: 3rem;
+        }
+
+        .suppliers .container {
+          padding: 1rem 2rem;
+        }
+
+        .suppliers .container li {
+          font-size: 1.5rem;
+          padding: 10px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .jumbotron.header {
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+        }
+
+        h1.logo {
+          font-size: 4rem;
+        }
+
+        .suppliers .container li {
+          font-size: 2.8rem;
+          padding: 20px;
+        }
+      }
     </style>
   </head>
   <body>
 
     <div class="jumbotron jumbotron-fluid header">
       <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-4">
+        <div class="row">
+          <div class="col-10">
             <h1 class="logo">{{ site.title }}</h1>
             <p class="phone"><a href="tel:03 5231 6466"><i class="fa fa-phone"></i>  03 5231 6466</a></p>
           </div>
-          <div class="col-1">
+          <div class="col-2">
             <a href="https://www.facebook.com/mower.corner/" target="_blank"><i class="fa fa-facebook-official fa-5"></i></a>
           </div>
         </div>
@@ -183,26 +228,27 @@
     <div class='jumbotron jumbotron-fluid footer'>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col">
+          <div class="col-12 col-sm-6 col-md-4">
             <h2>Contact</h2>
             <p class="email"><a href="mailto:admin@mowercorner.com.au"><i class="fa fa-envelope"></i> Email us</a></p>
             <p class="phone"><a href="tel:03 5231 6466"><i class="fa fa-phone"></i>  03 5231 6466</a></p>
             <p class="fax"><i class="fa fa-fax"></i>  03 5231 6566</p>
             <p class="address"><i class="fa fa-location-arrow"></i> 14 Skene St Colac VIC AU 3250</p>
           </div>
-          <div class="col">
+          <div class="col-12 col-sm-6 col-md-4">
             <h2>Opening hours</h2>
             <ul>
               <li>Mon-Fri 8.30am - 5pm</li>
               <li>Sat 9am - 12noon</li>
             </ul>
           </div>
-          <div class="col cc">
+          <div class="col-12 col-md-4 cc">
             <h2>We accept</h2>
             <i class="fa fa-cc-visa fa-2"></i>
             <i class="fa fa-cc-mastercard fa-2"></i>
           </div>
         </div>
+        <hr>
         <div class="row">
           <div class="col">
               <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3129.457973033522!2d143.5799587162439!3d-38.33838087966068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad30f6d992ea41d%3A0xfc6febaead0e21b!2s14+Skene+St%2C+Colac+VIC+3250!5e0!3m2!1sen!2sau!4v1499493617123" frameborder="0" style="border:0" allowfullscreen></iframe>
