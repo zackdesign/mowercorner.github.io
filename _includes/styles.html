@@ -1,3 +1,136 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <meta name="description" content="{{ site.description }}">
+    <title>{{ site.title }}</title>
+
+    <style>
+
+      h1.logo {
+        font-size: 1.8rem;
+      }
+      h1.logo a {
+        color: white;
+      }
+
+      .fa-facebook-official.fa-5 {
+        font-size: 2.1rem;
+        float: right;
+      }
+
+      .jumbotron.header {
+        color: white;
+        /* Fallback for web browsers that don't support RGBa */
+        background-color: rgb(0, 0, 0);
+        /* RGBa with 0.6 opacity */
+        background-color: rgba(0, 0, 0, 0.7);
+        /* For IE 5.5 - 7*/
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+        /* For IE 8*/
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+        padding: 1rem 2rem;
+        border-bottom: 18px solid #ff6e00;
+        margin-bottom: 0;
+      }
+
+      .page-content h1 {
+        padding-bottom: 1rem;
+      }
+
+      .page-content {
+        border-bottom: 18px solid #ff6e00;
+        padding: 2rem 0rem;
+      }
+
+      .phone {
+        font-weight: bold;
+      }
+      .jumbotron a {
+        color: #ff6e00;
+      }
+      .jumbotron a:hover {
+        text-decoration: underline;
+      }
+
+      .carousel {
+        border-bottom: 18px solid #ff6e00;
+      }
+      .carousel img {
+        width: 100%;
+        height: 100%;
+      }
+      .carousel h2 {
+        text-shadow: 3px 2px #101010;
+        font-size: 3rem;
+      }
+
+      .supplier-logos {
+        padding: 1rem 2rem;
+      }
+
+      .supplier-logos h2 {
+        margin-bottom: 16px;
+      }
+
+      .jumbotron.footer {
+        border-top: 18px solid #ff6e00;
+        background-color: #3a3a3a;
+        color: white;
+        margin-bottom: 0;
+      }
+      .cc .fa-2 {
+        font-size: 2rem;
+        color: white;
+      }
+      .footer i {
+        color: #ff6e00;
+      }
+      .map {
+        width: 100%;
+        height: 450px;
+      }
+
+      .img-fluid {
+        vertical-align: baseline;
+      }
+
+      @media (min-width: 576px) {
+        .fa-facebook-official.fa-5 {
+          font-size: 4rem;
+        }
+
+        h1.logo {
+          font-size: 3rem;
+        }
+
+        .suppliers .container {
+          padding: 1rem 2rem;
+        }
+
+        .suppliers .container li {
+          font-size: 2rem;
+          padding: 10px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .jumbotron.header {
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+        }
+
+        .jumbotron.header.page {
+          position: relative;
+        }
+
+        h1.logo {
+          font-size: 4rem;
+        }
+
+        .suppliers .container li {
+          padding: 20px;
+        }
+      }
+    </style>
