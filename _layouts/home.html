@@ -1,103 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang }}" class="home">
   <head>
     {% include styles.html %}
   </head>
   <body>
+    <!-- Accessibility skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <div class="jumbotron jumbotron-fluid header">
-      <div class="container">
-        <div class="row">
-          <div class="col-10">
-            <h1 class="logo"><a href="/">{{ site.title }}</a></h1>
-            <p class="phone"><a href="tel:03 5231 6466"><i class="fa fa-phone"></i>  03 5231 6466</a></p>
+    <!-- Modern Header/Navigation -->
+    <header class="site-header" role="banner">
+      <div class="container py-2">
+        <div class="row align-items-center">
+          <div class="col-9 col-md-10">
+            <div class="d-flex flex-column flex-md-row align-items-md-center">
+              <h1 class="logo me-md-4 mb-2 mb-md-0">
+                <a href="/" aria-label="Home - {{ site.title }}">{{ site.title | split: ' - ' | first }}</a>
+              </h1>
+              <p class="d-none d-md-block mb-0">
+                <a href="tel:{{ site.phone | remove: ' ' }}" class="contact-link" aria-label="Call us at {{ site.phone }}">
+                  <i class="fas fa-phone" aria-hidden="true"></i> {{ site.phone }}
+                </a>
+              </p>
+              <p class="mobile-phone d-md-none mb-0">
+                <a href="tel:{{ site.phone | remove: ' ' }}" class="contact-link" aria-label="Call us at {{ site.phone }}">
+                  <i class="fas fa-phone" aria-hidden="true"></i> {{ site.phone }}
+                </a>
+              </p>
+            </div>
           </div>
-          <div class="col-2">
-            <a href="https://www.facebook.com/mower.corner/" target="_blank"><i class="fa fa-facebook-official fa-5"></i></a>
+          <div class="col-3 col-md-2 text-end">
+            <a href="https://www.facebook.com/{{ site.facebook_username }}/" target="_blank" rel="noopener" class="social-link" aria-label="Visit our Facebook page">
+              <i class="fab fa-facebook" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselIndicators" data-slide-to="5"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
+    <!-- Hero Carousel -->
+    <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" aria-label="Featured products and services">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      </div>
+      <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto/v1500944801/mowercorner%20slideshow/DSCF6504.jpg" alt="First slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>All makes &amp; models serviced!</h2>
-            <h2>Pick-up and delivery is also available.</h2>
+          <img src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto,w_1920/v1500944801/mowercorner%20slideshow/DSCF6504.jpg" class="d-block w-100" alt="Professional lawn mowers and outdoor power equipment at Mower Corner">
+          <div class="carousel-caption d-md-block" data-aos="fade-up">
+            <h2>Expert Mower Sales & Servicing</h2>
+            <p class="d-none d-md-block">We service all makes and models with convenient pickup and delivery available.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto/v1500944801/mowercorner%20slideshow/DSCF6513.jpg" alt="Second slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>All makes &amp; models serviced!</h2>
-            <h2>Pick-up and delivery is also available.</h2>
+          <img src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto,w_1920/v1500944801/mowercorner%20slideshow/DSCF6513.jpg" class="d-block w-100" alt="Premium chainsaw collection at Mower Corner">
+          <div class="carousel-caption d-md-block" data-aos="fade-up">
+            <h2>Professional-Grade Chainsaws</h2>
+            <p class="d-none d-md-block">Find the perfect chainsaw for your cutting needs with expert advice.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto/v1500944801/mowercorner%20slideshow/DSCF6510.jpg" alt="Third slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>All makes &amp; models serviced!</h2>
-            <h2>Pick-up and delivery is also available.</h2>
+          <img src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto,w_1920/v1500944801/mowercorner%20slideshow/DSCF6510.jpg" class="d-block w-100" alt="Ride-on mowers and zero-turn mowers at Mower Corner">
+          <div class="carousel-caption d-md-block" data-aos="fade-up">
+            <h2>Premium Ride-On Mowers</h2>
+            <p class="d-none d-md-block">Tackle large properties with ease using our quality ride-on mowers.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto/v1500944801/mowercorner%20slideshow/DSCF6522.jpg" alt="Fourth slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>All makes &amp; models serviced!</h2>
-            <h2>Pick-up and delivery is also available.</h2>
+          <img src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto,w_1920/v1500944801/mowercorner%20slideshow/DSCF6522.jpg" class="d-block w-100" alt="Brush cutters and whipper snippers at Mower Corner">
+          <div class="carousel-caption d-md-block" data-aos="fade-up">
+            <h2>Quality Brush Cutters & Trimmers</h2>
+            <p class="d-none d-md-block">Get perfect edges and clear tough vegetation with our range of trimmers.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto/v1500944801/mowercorner%20slideshow/DSCF6523.jpg" alt="Fifth slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>All makes &amp; models serviced!</h2>
-            <h2>Pick-up and delivery is also available.</h2>
+          <img src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto,w_1920/v1500944801/mowercorner%20slideshow/DSCF6523.jpg" class="d-block w-100" alt="Leaf blowers and garden equipment at Mower Corner">
+          <div class="carousel-caption d-md-block" data-aos="fade-up">
+            <h2>Powerful Leaf Blowers & Vacuums</h2>
+            <p class="d-none d-md-block">Make yard cleanup easy with our efficient blowers and vacuums.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto/v1500944801/mowercorner%20slideshow/DSCF6531.jpg" alt="Sixth slide">
+          <img src="https://res.cloudinary.com/dux48uumi/image/upload/ar_1.8,c_crop,f_auto,q_auto,w_1920/v1500944801/mowercorner%20slideshow/DSCF6531.jpg" class="d-block w-100" alt="Professional outdoor power equipment service center at Mower Corner">
+          <div class="carousel-caption d-md-block" data-aos="fade-up">
+            <h2>Expert Repair & Servicing</h2>
+            <p class="d-none d-md-block">Trust our team with all your equipment maintenance needs.</p>
+          </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
-    <div class="container supplier-logos">
-      <h2>Suppliers</h2>
-      <div class="row">
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.atomindustries.com/"><img alt="Atom" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499951111/mowercorner%20logos/8c61a5_40385927ef034418940627866eae7355_mv2.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.grilloagrigarden.com.au/"><img alt="Grillo" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950914/mowercorner%20logos/grillo_spa.jpg"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.cubcadet.com.au/"><img alt="Cub Cadet" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_120/v1499950836/mowercorner%20logos/logo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.spitwater.com.au/"><img alt="Spitwater" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950988/mowercorner%20logos/logo_new_1438239421__48126.jpg"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://coxmowers.com.au/"><img alt="Cox Mowers" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950325/mowercorner%20logos/LOGO-Aust-Mowers.jpg"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.peerlessproducts.com.au/"><img alt="Peerless" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_130/v1499950969/mowercorner%20logos/peerless-logo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://therazorback.com.au/"><img alt="Razorback" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950938/mowercorner%20logos/razorback_logo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.rover.com.au/"><img alt="Rover" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950405/mowercorner%20logos/sitelogo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.stihl.com.au/"><img alt="Stihl" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950245/mowercorner%20logos/stihl_print_logo.gif"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.toro.com.au/"><img alt="Toro" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_70/v1499951727/mowercorner%20logos/photo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.victa.com/"><img alt="Victa" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950777/mowercorner%20logos/victa_logo_header.png"></a></div>
-      </div>
-    </div>
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Products Section -->
+      <section class="products-section py-5">
+        <div class="container">
+          <h2 class="text-center mb-5" data-aos="fade-up">Premium Outdoor Power Equipment</h2>
+          <div class="row">
+            {% for product in site.products %}
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 50 }}">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body">
+                    <h3 class="card-title h4">{{ product.name }}</h3>
+                    <p class="card-text">{{ product.description }}</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <!-- Suppliers Section -->
+      <section class="suppliers-section">
+        <div class="container">
+          <h2 data-aos="fade-up">Our Trusted Suppliers</h2>
+          <div class="row">
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="50">
+              <a href="https://atomindustries.com/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Atom Industries website">
+                <img alt="Atom Industries - Quality Outdoor Power Equipment" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_200/v1499951111/mowercorner%20logos/8c61a5_40385927ef034418940627866eae7355_mv2.png">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="100">
+              <a href="https://www.grilloaustralia.com.au/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Grillo website">
+                <img alt="Grillo - Professional Agriculture and Garden Equipment" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_200/v1499950914/mowercorner%20logos/grillo_spa.jpg">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="150">
+              <a href="https://www.cubcadet.com.au/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Cub Cadet website">
+                <img alt="Cub Cadet - Premium Lawn Care and Outdoor Power Equipment" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_240/v1499950836/mowercorner%20logos/logo.png">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="200">
+              <a href="https://www.spitwater.com.au/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Spitwater website">
+                <img alt="Spitwater - High Pressure Cleaners and Equipment" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_200/v1499950988/mowercorner%20logos/logo_new_1438239421__48126.jpg">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="250">
+              <a href="https://coxmowers.com.au/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Cox Mowers website">
+                <img alt="Cox Mowers - Australian-Made Quality Mowers" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_200/v1499950325/mowercorner%20logos/LOGO-Aust-Mowers.jpg">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="300">
+              <a href="https://www.peerlessproducts.com.au/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Peerless Products website">
+                <img alt="Peerless Products - Quality Garden and Outdoor Equipment" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_260/v1499950969/mowercorner%20logos/peerless-logo.png">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="350">
+              <a href="https://therazorback.com.au/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Razorback website">
+                <img alt="Razorback - Heavy-Duty Brush Cutters and Mowers" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_200/v1499950938/mowercorner%20logos/razorback_logo.png">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="400">
+              <a href="https://www.rover.com.au/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Rover website">
+                <img alt="Rover - Australian Lawn Mowers and Garden Equipment" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_200/v1499950405/mowercorner%20logos/sitelogo.png">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="450">
+              <a href="https://www.stihl.com.au/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Stihl website">
+                <img alt="Stihl - Professional Chainsaws and Outdoor Power Tools" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_200/v1499950245/mowercorner%20logos/stihl_print_logo.gif">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="500">
+              <a href="https://www.toro.com.au/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Toro website">
+                <img alt="Toro - Professional Turf and Landscape Equipment" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_140/v1499951727/mowercorner%20logos/photo.png">
+              </a>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="550">
+              <a href="https://www.victa.com/" target="_blank" rel="noopener" class="supplier-logo" aria-label="Visit Victa website">
+                <img alt="Victa - Australian Lawn Mowers and Garden Care" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_200/v1499950777/mowercorner%20logos/victa_logo_header.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services-section py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5" data-aos="fade-up">Expert Services</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                  <i class="fas fa-tools fa-3x mb-3 text-brand-primary"></i>
+                  <h3 class="card-title h4">Repairs & Servicing</h3>
+                  <p class="card-text">Professional servicing for all makes and models of outdoor power equipment. Our factory-trained technicians ensure your equipment runs at peak performance.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                  <i class="fas fa-truck fa-3x mb-3 text-brand-primary"></i>
+                  <h3 class="card-title h4">Pickup & Delivery</h3>
+                  <p class="card-text">Convenient pickup and delivery service available throughout the Western District. Save time and effort with our door-to-door service.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                  <i class="fas fa-user-cog fa-3x mb-3 text-brand-primary"></i>
+                  <h3 class="card-title h4">Expert Advice</h3>
+                  <p class="card-text">Personalized recommendations from our experienced team to help you find the perfect equipment for your specific needs and budget.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     {% include footer.html %}
 
     {% include scripts.html %}
 
+    <!-- AOS initialization -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 800,
+          once: true
+        });
+      });
+    </script>
   </body>
 </html>

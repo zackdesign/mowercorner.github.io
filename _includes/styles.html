@@ -1,136 +1,421 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
-    <meta name="description" content="{{ site.description }}">
-    <title>{{ site.title }}</title>
+    <!-- SEO tag -->
+    {% seo %}
+    <!-- Accessibility improvements -->
+    <meta name="theme-color" content="#ff6e00">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <!-- Upgrade to Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS - Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+      :root {
+        --brand-primary: #ff6e00;
+        --brand-secondary: #333;
+        --text-dark: #212529;
+        --text-light: #f8f9fa;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        color: var(--text-dark);
+        line-height: 1.7;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+      }
+
+      /* Utility classes */
+      .text-brand-primary {
+        color: var(--brand-primary) !important;
+      }
+
+      /* Accessibility improvements */
+      a:focus, button:focus {
+        outline: 3px solid var(--brand-primary);
+        outline-offset: 3px;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--brand-primary);
+        color: white;
+        padding: 8px;
+        z-index: 1500;
+        transition: top 0.3s;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Navbar/header */
+      .site-header {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 0.75rem 0;
+        border-bottom: 5px solid var(--brand-primary);
+        transition: all 0.3s ease;
+        position: absolute;
+        width: 100%;
+        z-index: 1030;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
 
       h1.logo {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+        margin-bottom: 0;
+        font-weight: 400;
+        line-height: 0.9;
       }
+
       h1.logo a {
         color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
       }
 
-      .fa-facebook-official.fa-5 {
-        font-size: 2.1rem;
-        float: right;
+      h1.logo a:hover {
+        color: var(--brand-primary);
       }
 
-      .jumbotron.header {
+      .social-link {
+        font-size: 2rem;
         color: white;
-        /* Fallback for web browsers that don't support RGBa */
-        background-color: rgb(0, 0, 0);
-        /* RGBa with 0.6 opacity */
-        background-color: rgba(0, 0, 0, 0.7);
-        /* For IE 5.5 - 7*/
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-        /* For IE 8*/
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-        padding: 1rem 2rem;
-        border-bottom: 18px solid #ff6e00;
-        margin-bottom: 0;
+        transition: color 0.3s ease;
       }
 
-      .page-content h1 {
-        padding-bottom: 1rem;
+      .social-link:hover {
+        color: var(--brand-primary);
       }
 
-      .page-content {
-        border-bottom: 18px solid #ff6e00;
-        padding: 2rem 0rem;
+      .contact-link {
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        transition: color 0.3s ease;
       }
 
-      .phone {
-        font-weight: bold;
-      }
-      .jumbotron a {
-        color: #ff6e00;
-      }
-      .jumbotron a:hover {
-        text-decoration: underline;
+      .contact-link:hover {
+        color: var(--brand-primary);
       }
 
+      .contact-link i {
+        color: var(--brand-primary);
+        margin-right: 0.5rem;
+      }
+
+      .mobile-phone {
+        width: 100%;
+        text-align: left;
+      }
+
+      .mobile-phone .contact-link {
+        display: inline-block;
+        padding: 4px 8px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 4px;
+        border: 1px solid var(--brand-primary);
+      }
+
+      /* Carousel */
       .carousel {
-        border-bottom: 18px solid #ff6e00;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
-      .carousel img {
+
+      .carousel-item {
+        height: 75vh;
+        min-height: 450px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .carousel-item img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+
+      .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 80%;
+        margin: 0 auto;
+        bottom: 20%;
+      }
+
+      .carousel-caption h2 {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: 2.2rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+      }
+
+      /* Suppliers section */
+      .suppliers-section {
+        padding: 4rem 0;
+        background-color: #f8f9fa;
+      }
+
+      .suppliers-section h2 {
+        color: var(--brand-secondary);
+        margin-bottom: 2rem;
+        position: relative;
+        padding-bottom: 1rem;
+        text-align: center;
+      }
+
+      .suppliers-section h2:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--brand-primary);
+      }
+
+      .supplier-logo {
+        display: flex;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .supplier-logo:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .supplier-logo img {
+        max-height: 80%;
+        max-width: 80%;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+      }
+
+      .supplier-logo:hover img {
+        filter: grayscale(0%);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #333;
+        color: white;
+        border-top: 5px solid var(--brand-primary);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: white;
+        position: relative;
+        padding-bottom: 0.75rem;
+      }
+
+      .footer h2:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--brand-primary);
+      }
+
+      .footer a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: var(--brand-primary);
+      }
+
+      .footer ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .footer li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer i {
+        color: var(--brand-primary);
+        margin-right: 0.5rem;
+      }
+
+      .footer .map {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        height: 400px;
+        width: 100%;
+        margin: 2rem 0;
+      }
+
+      .footer .map iframe {
         width: 100%;
         height: 100%;
       }
-      .carousel h2 {
-        text-shadow: 3px 2px #101010;
-        font-size: 3rem;
+
+      .footer .credits {
+        margin-top: 2rem;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
       }
 
-      .supplier-logos {
-        padding: 1rem 2rem;
+      /* Page content */
+      .page-content {
+        padding: 4rem 0;
       }
 
-      .supplier-logos h2 {
-        margin-bottom: 16px;
+      .page-content h1 {
+        margin-bottom: 2rem;
+        position: relative;
+        padding-bottom: 1rem;
       }
 
-      .jumbotron.footer {
-        border-top: 18px solid #ff6e00;
-        background-color: #3a3a3a;
-        color: white;
-        margin-bottom: 0;
-      }
-      .cc .fa-2 {
-        font-size: 2rem;
-        color: white;
-      }
-      .footer i {
-        color: #ff6e00;
-      }
-      .map {
-        width: 100%;
-        height: 450px;
+      .page-content h1:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background-color: var(--brand-primary);
       }
 
-      .img-fluid {
-        vertical-align: baseline;
+      /* For pages other than home, adjust the padding-top */
+      body:not(.home) .page-content {
+        padding-top: 8rem;
       }
 
-      @media (min-width: 576px) {
-        .fa-facebook-official.fa-5 {
-          font-size: 4rem;
+      @media (max-width: 767px) {
+        .mobile-phone {
+          display: block;
+          margin-top: 0.5rem;
+          font-size: 0.9rem;
+          background-color: rgba(0, 0, 0, 0.7);
+          padding: 0.25rem 0.5rem;
+          border-radius: 5px;
         }
 
+        .site-header {
+          padding: 0.5rem 0;
+        }
+      }
+
+      @media (min-width: 768px) {
         h1.logo {
-          font-size: 3rem;
+          font-size: 2.8rem;
         }
-
-        .suppliers .container {
-          padding: 1rem 2rem;
-        }
-
-        .suppliers .container li {
-          font-size: 2rem;
-          padding: 10px;
+        
+        .carousel-caption h2 {
+          font-size: 2.5rem;
         }
       }
 
       @media (min-width: 992px) {
-        .jumbotron.header {
-          position: absolute;
-          z-index: 1;
-          width: 100%;
-        }
-
-        .jumbotron.header.page {
-          position: relative;
-        }
-
         h1.logo {
-          font-size: 4rem;
+          font-size: 3.5rem;
+          letter-spacing: 0.2em;
         }
-
-        .suppliers .container li {
-          padding: 20px;
+        
+        .carousel-caption h2 {
+          font-size: 2.8rem;
         }
       }
+
+      /* Modal Styles */
+      .modal-content {
+        background-color: #fff;
+        color: var(--text-dark);
+      }
+
+      .modal-header {
+        background-color: var(--brand-secondary);
+        color: white;
+        border-bottom: 3px solid var(--brand-primary);
+      }
+
+      .modal-header .btn-close {
+        color: white;
+        filter: brightness(0) invert(1);
+      }
+
+      .modal-body {
+        padding: 2rem;
+        color: var(--text-dark);
+      }
+
+      .modal-body h2 {
+        color: var(--brand-secondary);
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+      }
+
+      .modal-body h3 {
+        color: var(--brand-secondary);
+        margin: 1.5rem 0 1rem;
+        font-size: 1.4rem;
+      }
+
+      .modal-body p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      .modal-body ul {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+
+      .modal-body li {
+        margin-bottom: 0.5rem;
+      }
+
+      .modal-footer {
+        border-top: 1px solid #dee2e6;
+        padding: 1rem;
+      }
+
+      .modal-footer .btn-primary {
+        background-color: var(--brand-primary);
+        border-color: var(--brand-primary);
+      }
+
+      .modal-footer .btn-primary:hover {
+        background-color: #e66600;
+        border-color: #e66600;
+      }
     </style>
+

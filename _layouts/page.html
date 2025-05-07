@@ -5,43 +5,107 @@
   </head>
   <body>
 
-    <div class="jumbotron jumbotron-fluid header page">
+    <!-- Modern Header/Navigation -->
+    <header class="site-header">
+      <div class="container py-2">
+        <div class="row align-items-center">
+          <div class="col-9 col-md-10">
+            <div class="d-flex flex-column flex-md-row align-items-md-center">
+              <h1 class="logo me-md-4 mb-2 mb-md-0"><a href="/">{{ site.title }}</a></h1>
+              <p class="d-none d-md-block mb-0">
+                <a href="tel:03 5231 6466" class="contact-link">
+                  <i class="fas fa-phone"></i> 03 5231 6466
+                </a>
+              </p>
+              <p class="mobile-phone mb-0">
+                <a href="tel:03 5231 6466" class="contact-link">
+                  <i class="fas fa-phone"></i> 03 5231 6466
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="col-3 col-md-2 text-end">
+            <a href="https://www.facebook.com/mower.corner/" target="_blank" class="social-link">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-content">
       <div class="container">
-        <div class="row">
-          <div class="col-10">
-            <h1 class="logo"><a href="/">{{ site.title }}</a></h1>
-            <p class="phone"><a href="tel:03 5231 6466"><i class="fa fa-phone"></i>  03 5231 6466</a></p>
-          </div>
-          <div class="col-2">
-            <a href="https://www.facebook.com/mower.corner/" target="_blank"><i class="fa fa-facebook-official fa-5"></i></a>
-          </div>
+        <h1 data-aos="fade-up">{{ page.title }}</h1>
+        <div data-aos="fade-up" data-aos-delay="100">
+          {{ content }}
         </div>
       </div>
     </div>
 
-    <div class="page-content">
+    <!-- Suppliers Section -->
+    <section class="suppliers-section">
       <div class="container">
-        <h1>{{ page.title }}</h1>
-        {{ content }}
+        <h2 data-aos="fade-up">Our Trusted Suppliers</h2>
+        <div class="row">
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="50">
+            <a href="https://www.atomindustries.com/" target="_blank" class="supplier-logo">
+              <img alt="Atom" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499951111/mowercorner%20logos/8c61a5_40385927ef034418940627866eae7355_mv2.png">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="100">
+            <a href="https://www.grilloagrigarden.com.au/" target="_blank" class="supplier-logo">
+              <img alt="Grillo" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950914/mowercorner%20logos/grillo_spa.jpg">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="150">
+            <a href="https://www.cubcadet.com.au/" target="_blank" class="supplier-logo">
+              <img alt="Cub Cadet" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_120/v1499950836/mowercorner%20logos/logo.png">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="200">
+            <a href="https://www.spitwater.com.au/" target="_blank" class="supplier-logo">
+              <img alt="Spitwater" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950988/mowercorner%20logos/logo_new_1438239421__48126.jpg">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="250">
+            <a href="https://coxmowers.com.au/" target="_blank" class="supplier-logo">
+              <img alt="Cox Mowers" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950325/mowercorner%20logos/LOGO-Aust-Mowers.jpg">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://www.peerlessproducts.com.au/" target="_blank" class="supplier-logo">
+              <img alt="Peerless" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_130/v1499950969/mowercorner%20logos/peerless-logo.png">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="350">
+            <a href="https://therazorback.com.au/" target="_blank" class="supplier-logo">
+              <img alt="Razorback" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950938/mowercorner%20logos/razorback_logo.png">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://www.rover.com.au/" target="_blank" class="supplier-logo">
+              <img alt="Rover" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950405/mowercorner%20logos/sitelogo.png">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="450">
+            <a href="https://www.stihl.com.au/" target="_blank" class="supplier-logo">
+              <img alt="Stihl" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950245/mowercorner%20logos/stihl_print_logo.gif">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="500">
+            <a href="https://www.toro.com.au/" target="_blank" class="supplier-logo">
+              <img alt="Toro" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_70/v1499951727/mowercorner%20logos/photo.png">
+            </a>
+          </div>
+          <div class="col-6 col-md-3 col-xl-2" data-aos="fade-up" data-aos-delay="550">
+            <a href="https://www.victa.com/" target="_blank" class="supplier-logo">
+              <img alt="Victa" class="img-fluid" src="https://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950777/mowercorner%20logos/victa_logo_header.png">
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="container supplier-logos">
-      <h2>Suppliers</h2>
-      <div class="row">
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.atomindustries.com/"><img alt="Atom" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499951111/mowercorner%20logos/8c61a5_40385927ef034418940627866eae7355_mv2.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="http://www.grilloagrigarden.com.au/"><img alt="Grillo" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950914/mowercorner%20logos/grillo_spa.jpg"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="http://www.cubcadet.com.au/"><img alt="Cub Cadet" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_120/v1499950836/mowercorner%20logos/logo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="http://www.spitwater.com.au/"><img alt="Spitwater" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950988/mowercorner%20logos/logo_new_1438239421__48126.jpg"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="http://coxmowers.com.au/"><img alt="Cox Mowers" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950325/mowercorner%20logos/LOGO-Aust-Mowers.jpg"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="http://www.peerlessproducts.com.au/"><img alt="Peerless" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_130/v1499950969/mowercorner%20logos/peerless-logo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="http://therazorback.com.au/"><img alt="Razorback" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950938/mowercorner%20logos/razorback_logo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="http://www.rover.com.au/"><img alt="Rover" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950405/mowercorner%20logos/sitelogo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="http://www.stihl.com.au/"><img alt="Stihl" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950245/mowercorner%20logos/stihl_print_logo.gif"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="http://www.toro.com.au/"><img alt="Toro" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_70/v1499951727/mowercorner%20logos/photo.png"></a></div>
-        <div class="col-3 col-sm-3 col-md-2"><a target="_blank" href="https://www.victa.com/"><img alt="Victa" class="img-fluid" src="http://res.cloudinary.com/dux48uumi/image/upload/q_auto,f_auto,c_scale,w_100/v1499950777/mowercorner%20logos/victa_logo_header.png"></a></div>
-      </div>
-    </div>
+    </section>
 
     {% include footer.html %}
 

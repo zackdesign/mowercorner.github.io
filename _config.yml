@@ -13,18 +13,58 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Mower Corner
-email: your-email@example.com
-description: > # this means to ignore newlines until "baseurl:"
-  Mower Corner is your locally owned and operated business in the Western District.
-  Come in store to see our range of mowers, chainsaws, brush cutters and more.
-  We service all makes and models and offer pick-up and delivery.
+title: "Mower Corner - Outdoor Power Equipment & Servicing Specialists"
+email: info@mowercorner.com.au
+phone: "03 5231 6466"
+description: >
+  Mower Corner is your leading outdoor power equipment specialist in the Western District.
+  We offer sales, servicing and repairs for premium lawn mowers, ride-on mowers, zero-turn mowers,
+  chainsaws, brush cutters, whipper snippers, leaf blowers, hedge trimmers, and more.
+  Authorized dealer for Stihl, Toro, Victa, and other top brands with expert service and local delivery.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://mowercorner.com.au" # the base hostname & protocol for your site
+address: "1 Main Street, Colac, Victoria 3250"
+hours: "Monday to Friday: 8:30am - 5:30pm, Saturday: 9:00am - 12:00pm"
+
+# Social media
+facebook_username: mower.corner
+
+# SEO and accessibility settings
+lang: en-AU
+author: Mower Corner
+logo: /assets/images/logo.png
+social:
+  name: Mower Corner
+  links:
+    - https://www.facebook.com/mower.corner/
+
+# Keywords
+keywords: >
+  lawn mowers, ride-on mowers, zero turn mowers, chainsaws, whipper snippers, leaf blowers,
+  hedge trimmers, garden equipment, lawn care, outdoor power tools, brush cutters,
+  mower repairs, mower service, Stihl, Toro, Victa, Cub Cadet, outdoor power equipment
+
+# Products
+products:
+  - name: "Lawn Mowers"
+    description: "Wide range of push mowers, self-propelled mowers and electric mowers"
+  - name: "Ride-on Mowers"
+    description: "Premium ride-on mowers for larger properties and professional use"
+  - name: "Zero Turn Mowers"
+    description: "High-performance zero turn mowers for maximum efficiency and precision"
+  - name: "Chainsaws"
+    description: "Professional and homeowner chainsaws for all cutting needs"
+  - name: "Brush Cutters & Whipper Snippers"
+    description: "Quality brush cutters and line trimmers for edge trimming and clearing"
+  - name: "Leaf Blowers & Vacuums"
+    description: "Powerful blowers and vacuum systems for garden cleanup"
+  - name: "Hedge Trimmers"
+    description: "Electric and petrol hedge trimmers for perfect garden maintenance"
 
 # Build settings
 markdown: kramdown
-
+plugins:
+  - jekyll-seo-tag
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
