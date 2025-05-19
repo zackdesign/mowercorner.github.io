@@ -24,7 +24,7 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mowercorner.com.au" # the base hostname & protocol for your site
 address: "1 Main Street, Colac, Victoria 3250"
-hours: "Monday to Friday: 8:30am - 5:30pm, Saturday: 9:00am - 12:00pm"
+hours: "Monday to Friday: 8:30am - 5:00pm, Saturday: 9:00am - 12:00pm"
 
 # Social media
 facebook_username: mower.corner
