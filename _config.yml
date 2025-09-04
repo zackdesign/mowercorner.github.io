@@ -23,7 +23,7 @@ description: >
   Authorized dealer for Stihl, Toro, Victa, and other top brands with expert service and local delivery.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mowercorner.com.au" # the base hostname & protocol for your site
-address: "1 Main Street, Colac, Victoria 3250"
+address: "14 Skene Street, Colac, Vic 3250"
 hours: "Monday to Friday: 8:30am - 5:00pm, Saturday: 9:00am - 12:00pm"
 
 # Social media
