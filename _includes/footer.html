@@ -17,7 +17,9 @@
       <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
         <h2>Opening Hours</h2>
         <ul class="list-unstyled">
-          <li><i class="far fa-clock me-2" aria-hidden="true"></i> {{ site.hours  }}</li>
+          <li class="mb-2"><i class="far fa-clock me-2" aria-hidden="true"></i> {{ site.hours.weekdays }}</li>
+          <li class="mb-2"><i class="far fa-clock me-2" aria-hidden="true"></i> {{ site.hours.saturday }}</li>
+          <li class="mb-2"><i class="far fa-times-circle me-2" aria-hidden="true"></i> {{ site.hours.sunday }}</li>
         </ul>
       </div>
       
