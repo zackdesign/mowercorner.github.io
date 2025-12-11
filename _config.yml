@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: "Mower Corner - Outdoor Power Equipment & Servicing Specialists"
-email: info@mowercorner.com.au
+email: parts@mowercorner.com.au
 phone: "03 5231 6466"
 description: >
   Mower Corner is your leading outdoor power equipment specialist in the Western District.
