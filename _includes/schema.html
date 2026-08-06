@@ -42,18 +42,19 @@
     }{% unless forloop.last %},{% endunless %}
     {%- endfor %}
   ],
-  "makesOffer": [
-    {%- for item in site.data.range %}
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Product",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Outdoor power equipment",
+    "itemListElement": [
+      {%- for item in site.data.range %}
+      {
+        "@type": "OfferCatalog",
         "name": {{ item.name | jsonify }},
         "description": {{ item.description | jsonify }}
-      }
-    }{% unless forloop.last %},{% endunless %}
-    {%- endfor %}
-  ],
+      }{% unless forloop.last %},{% endunless %}
+      {%- endfor %}
+    ]
+  },
   "brand": [
     {%- for supplier in site.data.suppliers %}
     { "@type": "Brand", "name": {{ supplier.name | jsonify }} }{% unless forloop.last %},{% endunless %}

@@ -333,6 +333,33 @@ a.plate__val:hover { color: var(--orange); }
 }
 .nav a:hover { color: #fff; border-bottom-color: var(--orange); }
 
+/* Buying is a separate intent from the section anchors, so it reads as a
+   destination rather than another jump link. */
+.nav__shop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--orange) !important;
+  border-bottom-color: transparent;
+}
+.nav__shop:hover { color: #ff7f3d !important; border-bottom-color: currentColor; }
+.nav__shop svg { width: 0.85em; height: 0.85em; }
+
+.hero__shop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  align-self: center;
+  color: #fff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  padding-bottom: 2px;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.hero__shop:hover { color: var(--orange); border-bottom-color: var(--orange); }
+.hero__shop svg { width: 0.9em; height: 0.9em; }
+
 .header__actions { margin-left: auto; display: flex; align-items: center; gap: 0.75rem; }
 
 .header .btn { padding: 0.7rem 1.1rem; font-size: var(--step--1); }
