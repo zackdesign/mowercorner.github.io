@@ -82,6 +82,21 @@ layout: default
         </article>
       {% endfor %}
     </div>
+
+    <div class="service-cta">
+      <p class="service-cta__text">
+        Ring the shop or send the details and we'll book it in — tell us the
+        machine, roughly what it's doing, and whether you need it picked up.
+      </p>
+      <div class="service-cta__actions">
+        <a class="btn btn--primary" href="tel:{{ tel }}">
+          {% include icon.html name="phone" %} Call to book · {{ site.phone }}
+        </a>
+        <a class="btn btn--ghost" href="mailto:{{ site.email }}?subject=Service%20booking%20request&amp;body=Machine%20%28make%20and%20model%29%3A%0D%0A%0D%0AWhat%20it%27s%20doing%3A%0D%0A%0D%0APickup%20needed%20%28yes%2Fno%29%3A%0D%0A%0D%0AName%20and%20phone%3A%0D%0A">
+          {% include icon.html name="mail" %} Email the details
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -117,9 +132,15 @@ layout: default
 </section>
 
 <!-- Brands ----------------------------------------------------------------->
-<section class="band" id="brands" style="padding-top: 0;">
+<section class="band band--photo band--brands" id="brands">
+  <img class="band__bg"
+       src="{{ '/assets/images/photos/range-stripes.jpg' | relative_url }}"
+       srcset="{{ '/assets/images/photos/range-stripes-1100.jpg' | relative_url }} 1100w,
+               {{ '/assets/images/photos/range-stripes.jpg' | relative_url }} 2200w"
+       sizes="100vw" width="2200" height="850" loading="lazy" decoding="async"
+       alt="" aria-hidden="true">
   <div class="shell">
-    <h2 class="eyebrow">Brands we carry &amp; service</h2>
+    <h2 class="eyebrow eyebrow--field">Brands we carry &amp; service</h2>
     <div class="brands__grid">
       {% for supplier in site.data.suppliers %}
         <a class="brand" href="{{ supplier.url }}" target="_blank" rel="noopener">
@@ -136,19 +157,14 @@ layout: default
           <span class="brand__note">{{ supplier.note }}</span>
         </a>
       {% endfor %}
+      <span class="brand brand--more">
+        <span class="brand__wordmark">+ more</span>
+        <span class="brand__note">Ask at the counter</span>
+      </span>
     </div>
   </div>
 </section>
 
-
-<!-- Photo break: the result ------------------------------------------------>
-<div class="photoband">
-  <img src="{{ '/assets/images/photos/range-stripes.jpg' | relative_url }}"
-       srcset="{{ '/assets/images/photos/range-stripes-1100.jpg' | relative_url }} 1100w,
-               {{ '/assets/images/photos/range-stripes.jpg' | relative_url }} 2200w"
-       sizes="100vw" width="2200" height="850" loading="lazy" decoding="async"
-       alt="Fresh stripes across a big lawn, one mower still working in the corner">
-</div>
 
 <!-- Workshop ---------------------------------------------------------------->
 <section class="band band--ink" style="padding-bottom: 0;">

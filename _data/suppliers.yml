@@ -43,6 +43,7 @@
   url: "https://www.stihl.com.au/"
   logo: "v1499950245/mowercorner%20logos/stihl_print_logo.gif"
 - name: "Toro"
+  asset: "/assets/images/brands/toro.svg"
   note: "Turf & landscape"
   url: "https://www.toro.com.au/"
 - name: "Victa"

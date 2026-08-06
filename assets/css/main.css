@@ -500,6 +500,20 @@ a.plate__val:hover { color: var(--orange); }
   gap: 1rem;
   transition: background-color 0.2s ease;
 }
+
+/* Lock the icon, label, heading and body to shared rows so cards with
+   two- and three-line headings still line up across the row. */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 44rem) {
+    .services__grid { grid-template-rows: repeat(4, auto); }
+    .service {
+      display: grid;
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+      align-content: start;
+    }
+  }
+}
 .service:hover { background: var(--ink-raised); }
 
 .service__icon {
@@ -510,7 +524,9 @@ a.plate__val:hover { color: var(--orange); }
 .service__icon svg { width: 100%; height: 100%; }
 
 .service__plate {
-  align-self: flex-start;
+  align-self: start;
+  justify-self: start;
+  text-wrap: balance;
   padding: 0.3rem 0.6rem;
   border: 1px solid var(--ink-line);
   border-radius: var(--radius);
@@ -522,6 +538,28 @@ a.plate__val:hover { color: var(--orange); }
 
 .service h3 { font-size: var(--step-2); color: #fff; }
 .service p { color: var(--muted-on-ink); margin: 0; }
+
+/* Booking actions — the section the hero's "Book a service" button lands on
+   has to be able to actually take a booking. */
+.service-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 2.5rem;
+  margin-top: 2rem;
+  padding: clamp(1.5rem, 1rem + 2vw, 2rem);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius);
+  background: var(--ink-raised);
+}
+.service-cta__text {
+  flex: 1 1 22rem;
+  margin: 0;
+  color: var(--muted-on-ink);
+  max-width: 46ch;
+}
+.service-cta__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 /* --------------------------------------------------------------------------
    Range
@@ -634,13 +672,18 @@ a.plate__val:hover { color: var(--orange); }
   max-width: 8.5rem;
   width: auto;
   object-fit: contain;
-  mix-blend-mode: multiply; /* dissolves the baked-in white/grey boxes */
+  mix-blend-mode: multiply; /* dissolves baked-in white boxes */
   filter: grayscale(1) contrast(1.1);
   opacity: 0.7;
   transition: filter 0.25s ease, opacity 0.25s ease;
 }
 .brand:hover img,
 .brand:focus-visible img { filter: none; opacity: 1; }
+
+/* Fills the trailing grid cell and says something true: the wall is not the
+   whole list. Not a link — there is nowhere more specific to send anyone. */
+.brand--more { cursor: default; }
+.brand--more .brand__wordmark { color: var(--muted); }
 
 .brand__wordmark {
   font-family: var(--display);
@@ -749,6 +792,16 @@ a.plate__val:hover { color: var(--orange); }
 .band--photo > .shell {
   position: relative;
   z-index: 2;
+}
+
+/* Brands float over the mown lawn: a lighter scrim than the call band so the
+   stripes stay legible, and the mower operator kept clear at the top right. */
+.band--brands .band__bg { object-position: center top; }
+.band--brands::before {
+  background: linear-gradient(180deg,
+    rgba(16, 34, 21, 0.62) 0%,
+    rgba(16, 34, 21, 0.78) 40%,
+    rgba(20, 24, 26, 0.88) 100%);
 }
 
 /* --------------------------------------------------------------------------
