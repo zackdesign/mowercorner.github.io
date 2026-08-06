@@ -73,6 +73,18 @@ STIHL, Toro, Victa, Cox, Rover, Cub Cadet, Briggs & Stratton, Sanli, Grillo,
 Atom, Razorback, Spitwater and more. If your machine isn't on that list it's
 still worth asking — a lot of small engine parts are shared across brands.
 
+## Buy online, collect in store
+
+We're set up for **Click & Collect** on the
+[STIHL online shop]({{ site.stihl_shop_url }}) — order STIHL machinery and
+accessories online and pick them up here at Skene Street rather than waiting on
+a courier. Choose **Mower Corner** as your store and you'll see live
+availability against each product.
+
+Stock varies. Items we hold show as ready to collect; anything else shows
+"contact dealer for availability" — ring us and we'll tell you what we can get
+in and how long it takes.
+
 ## Come and see us
 
 **14 Skene Street, Colac** — Monday to Friday 8:30am to 5pm, Saturday 9am to

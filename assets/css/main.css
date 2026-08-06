@@ -568,6 +568,18 @@ a.plate__val:hover { color: var(--orange); }
    Range
    -------------------------------------------------------------------------- */
 
+.range__cc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin: 2rem 0 0;
+}
+.range__cc .btn { border-color: var(--zinc-line); }
+.range__cc .btn:hover { background: rgba(0, 0, 0, 0.05); border-color: var(--ink); }
+.range__cc-note { color: var(--muted); font-size: 0.95rem; max-width: 44ch; }
+.range__cc-note strong { color: var(--ink); font-weight: 600; }
+
 .range__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));

@@ -53,6 +53,12 @@ hours:
     display: "Closed"
     weekdays: [0]
 
+# STIHL Click & Collect. Their shop stores the chosen dealer in a session
+# cookie set by POST, so no URL can pre-select Mower Corner — customers pick
+# the store themselves. Link plainly and say so.
+stihl_shop_url: "https://shop.stihl.com.au/"
+stihl_dealer_url: "https://www.stihl.com.au/en/dealers/mower-corner-9364609c-8879-4a15-8c1c-b4abd750ba3b"
+
 # Social media
 facebook_username: mower.corner
 
