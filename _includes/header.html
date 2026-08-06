@@ -13,6 +13,30 @@
       </a>
     </nav>
 
+    <details class="mobnav">
+      <summary class="mobnav__toggle" aria-label="Menu">
+        <span class="mobnav__icon mobnav__icon--open">{% include icon.html name="menu" %}</span>
+        <span class="mobnav__icon mobnav__icon--close">{% include icon.html name="close" %}</span>
+      </summary>
+      <div class="mobnav__panel">
+        <nav class="mobnav__links" aria-label="Menu">
+          <a href="{{ '/mower-servicing-repairs/' | relative_url }}">Mower servicing &amp; repairs</a>
+          <a href="{{ '/chainsaw-service-sharpening/' | relative_url }}">Chainsaw service &amp; sharpening</a>
+          <a href="{{ '/spare-parts/' | relative_url }}">Spare parts</a>
+          <a href="{{ '/pickup-and-delivery/' | relative_url }}">Pickup &amp; delivery</a>
+          <a href="{{ '/#range' | relative_url }}">The range</a>
+          <a href="{{ '/#brands' | relative_url }}">Brands</a>
+          <a href="{{ '/#visit' | relative_url }}">Visit the shop</a>
+          <a class="mobnav__shop" href="{{ site.stihl_shop_url }}" target="_blank" rel="noopener">
+            STIHL shop {% include icon.html name="external" %}
+          </a>
+        </nav>
+        <a class="mobnav__call btn btn--primary" href="tel:{{ site.phone | remove: ' ' }}">
+          {% include icon.html name="phone" %} Call {{ site.phone }}
+        </a>
+      </div>
+    </details>
+
     <div class="header__actions">
       <a class="btn btn--primary" href="tel:{{ site.phone | remove: ' ' }}">
         {% include icon.html name="phone" %}

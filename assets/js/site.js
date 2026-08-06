@@ -146,6 +146,45 @@
     });
   }
 
+  /* ------------------------------------------------------------------------
+     Mobile menu niceties. The <details> disclosure already opens and closes
+     on its own; this only adds Escape, outside-click and same-page-anchor
+     dismissal, so a JS failure still leaves a working menu.
+     ------------------------------------------------------------------------ */
+
+  function mobileMenu() {
+    var nav = document.querySelector('.mobnav');
+    if (!nav) return;
+
+    var close = function () { nav.removeAttribute('open'); };
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.hasAttribute('open')) {
+        close();
+        var t = nav.querySelector('summary');
+        if (t) t.focus();
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (nav.hasAttribute('open') && !nav.contains(e.target)) close();
+    });
+
+    // Same-page anchors don't navigate, so the panel would stay over the content.
+    nav.querySelectorAll('a[href*="#"]').forEach(function (a) {
+      a.addEventListener('click', close);
+    });
+
+    // Never leave it open when the desktop nav takes over.
+    var wide = window.matchMedia('(min-width: 62rem)');
+    var sync = function () { if (wide.matches) close(); };
+    wide.addEventListener ? wide.addEventListener('change', sync) : wide.addListener(sync);
+  }
+
+  try {
+    mobileMenu();
+  } catch (e) { /* the disclosure still works unaided */ }
+
   try {
     reveals();
   } catch (e) {

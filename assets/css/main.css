@@ -333,6 +333,66 @@ a.plate__val:hover { color: var(--orange); }
 }
 .nav a:hover { color: #fff; border-bottom-color: var(--orange); }
 
+/* --------------------------------------------------------------------------
+   Mobile menu — a <details> disclosure, so it works with JavaScript disabled
+   or failed. JS only adds the niceties (Escape, outside click, anchor close).
+   -------------------------------------------------------------------------- */
+
+.mobnav { margin-left: auto; }
+.mobnav__toggle {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius);
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+}
+.mobnav__toggle::-webkit-details-marker { display: none; }
+.mobnav__toggle:hover { border-color: var(--orange); color: var(--orange); }
+.mobnav__icon { display: none; }
+.mobnav__icon svg { width: 1.35rem; height: 1.35rem; display: block; }
+.mobnav:not([open]) .mobnav__icon--open { display: block; }
+.mobnav[open] .mobnav__icon--close { display: block; }
+
+.mobnav__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 60;
+  padding: 1rem var(--gutter) 1.5rem;
+  background: var(--ink);
+  border-bottom: 3px solid var(--orange);
+  box-shadow: 0 18px 30px -18px rgba(0, 0, 0, 0.85);
+  max-height: calc(100dvh - 100%);
+  overflow-y: auto;
+}
+
+.mobnav__links { display: grid; }
+.mobnav__links a {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--ink-line);
+  color: var(--zinc);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+.mobnav__links a:hover { color: var(--orange); }
+.mobnav__shop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--orange) !important;
+}
+.mobnav__shop svg { width: 0.85em; height: 0.85em; }
+.mobnav__call { margin-top: 1.25rem; width: 100%; justify-content: center; }
+
+@media (min-width: 62rem) {
+  .mobnav { display: none; }
+}
+
 /* Buying is a separate intent from the section anchors, so it reads as a
    destination rather than another jump link. */
 .nav__shop {
@@ -364,6 +424,7 @@ a.plate__val:hover { color: var(--orange); }
 
 .header .btn { padding: 0.7rem 1.1rem; font-size: var(--step--1); }
 .header__phone-label { display: none; }
+.header__actions { margin-left: 0.6rem; }
 
 @media (min-width: 62rem) {
   .nav { display: flex; }
