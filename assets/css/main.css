@@ -505,13 +505,16 @@ a.plate__val:hover { color: var(--orange); }
    two- and three-line headings still line up across the row. */
 @supports (grid-template-rows: subgrid) {
   @media (min-width: 44rem) {
-    .services__grid { grid-template-rows: repeat(4, auto); }
+    .services__grid { grid-template-rows: repeat(5, auto); }
     .service {
       display: grid;
-      grid-row: span 4;
+      grid-row: span 5;
       grid-template-rows: subgrid;
       align-content: start;
     }
+    /* Body copy takes the slack so the link always sits on the last row. */
+    .service p { align-self: start; }
+    .service .service__more { align-self: end; }
   }
 }
 .service:hover { background: var(--ink-raised); }
