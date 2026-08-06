@@ -79,6 +79,11 @@ layout: default
           <span class="service__plate">{{ service.plate }}</span>
           <h3>{{ service.name }}</h3>
           <p>{{ service.description }}</p>
+          {% if service.url %}
+            <a class="service__more" href="{{ service.url | relative_url }}">
+              {{ service.link_text | default: "Read more" }} {% include icon.html name="arrow" %}
+            </a>
+          {% endif %}
         </article>
       {% endfor %}
     </div>

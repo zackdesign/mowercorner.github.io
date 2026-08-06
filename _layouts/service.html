@@ -1,0 +1,103 @@
+---
+layout: default
+---
+{%- assign tel = site.phone | remove: ' ' -%}
+
+<article class="service-page">
+  <header class="svc-hero">
+    <img class="svc-hero__bg"
+         src="{{ page.photo | prepend: '/assets/images/photos/' | append: '.jpg' | relative_url }}"
+         srcset="{{ page.photo | prepend: '/assets/images/photos/' | append: '-1100.jpg' | relative_url }} 1100w,
+                 {{ page.photo | prepend: '/assets/images/photos/' | append: '.jpg' | relative_url }} 2200w"
+         sizes="100vw" width="2200" height="900" fetchpriority="high" decoding="async"
+         alt="{{ page.photo_alt }}">
+    <div class="shell svc-hero__inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Mower Corner</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ page.crumb | default: page.title }}</span>
+      </nav>
+      <h1>{{ page.h1 | default: page.title }}</h1>
+      <p class="svc-hero__lede">{{ page.lede }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="tel:{{ tel }}">
+          {% include icon.html name="phone" %} Call {{ site.phone }}
+        </a>
+        <a class="btn btn--ghost" href="{{ site.maps_url }}" target="_blank" rel="noopener">
+          {% include icon.html name="pin" %} 14 Skene Street, Colac
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="band">
+    <div class="shell svc-body">
+      <div class="prose prose--svc">
+        {{ content }}
+      </div>
+
+      <aside class="svc-aside">
+        <div class="plate">
+          <div class="plate__row">
+            <span class="plate__key">Status</span>
+            <span class="status" data-status hidden>
+              <span class="status__lamp"></span>
+              <span data-status-text></span>
+            </span>
+          </div>
+          <div class="plate__row">
+            <span class="plate__key">Phone</span>
+            <a class="plate__val" href="tel:{{ tel }}">{{ site.phone }}</a>
+          </div>
+          <div class="plate__row">
+            <span class="plate__key">Email</span>
+            <a class="plate__val" href="mailto:{{ site.email }}">{{ site.email }}</a>
+          </div>
+        </div>
+
+        <div class="svc-aside__hours">
+          <p class="eyebrow">Opening hours</p>
+          {% for row in site.hours %}
+            <div class="hours__row hours__row--light" data-weekdays="{{ row.weekdays | join: ',' }}">
+              <span class="hours__day">{{ row.days }}</span>
+              <span class="hours__time">{{ row.display }}</span>
+            </div>
+          {% endfor %}
+        </div>
+
+        <nav class="svc-aside__links" aria-label="Other services">
+          <p class="eyebrow">Also at the shop</p>
+          <ul>
+            {% assign others = site.services_pages | default: site.pages %}
+            {% for pg in site.pages %}
+              {% if pg.layout == 'service' and pg.url != page.url %}
+                <li><a href="{{ pg.url | relative_url }}">{{ pg.crumb | default: pg.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            <li><a href="{{ '/#range' | relative_url }}">The full range we sell</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+
+  <section class="band band--field">
+    <div class="shell callout">
+      <div>
+        <p class="eyebrow eyebrow--field">{{ page.cta_eyebrow | default: "Ready when you are" }}</p>
+        <h2>{{ page.cta_heading | default: "Ring the shop and describe it" }}</h2>
+        <p>{{ page.cta_text | default: "Well over thirty years of machines through the workshop means we've probably heard the noise it's making before." }}</p>
+      </div>
+      <div class="callout__actions">
+        <a class="btn btn--primary" href="tel:{{ tel }}">
+          {% include icon.html name="phone" %} {{ site.phone }}
+        </a>
+        <a class="btn btn--ghost" href="mailto:{{ site.email }}?subject={{ page.title | uri_escape }}%20enquiry">
+          {% include icon.html name="mail" %} Email us
+        </a>
+      </div>
+    </div>
+  </section>
+</article>
+
+{% include service-schema.html %}
