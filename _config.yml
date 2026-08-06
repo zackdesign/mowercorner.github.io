@@ -1,81 +1,108 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
+# This config file is meant for settings that affect your whole site, values
+# which you are expected to set up once and rarely edit after that.
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve'. If you change this file, restart the server.
 
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: "Mower Corner - Outdoor Power Equipment & Servicing Specialists"
+title: "Mower Corner"
+tagline: "Outdoor power equipment sales, service & spare parts in Colac"
 email: parts@mowercorner.com.au
 phone: "03 5231 6466"
+phone_intl: "+61 3 5231 6466"
 description: >
-  Mower Corner is your leading outdoor power equipment specialist in the Western District.
-  We offer sales, servicing and repairs for premium lawn mowers, ride-on mowers, zero-turn mowers,
-  chainsaws, brush cutters, whipper snippers, leaf blowers, hedge trimmers, and more.
-  Authorized dealer for Stihl, Toro, Victa, and other top brands with expert service and local delivery.
+  Mower Corner is Colac's Elite STIHL Dealer and outdoor power equipment
+  specialist, locally owned and run for well over 30 years. Sales, servicing,
+  repairs and spare parts for lawn mowers, ride-on and zero-turn mowers,
+  chainsaws, brush cutters, whipper snippers, blowers and hedge trimmers,
+  with pickup and delivery across the Western District. Authorised dealer
+  for STIHL, Toro, Victa, Cub Cadet and more.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mowercorner.com.au" # the base hostname & protocol for your site
+
+# Location
 address: "14 Skene Street, Colac, VIC 3250"
+street_address: "14 Skene Street"
+locality: "Colac"
+region: "VIC"
+postcode: "3250"
+latitude: -38.338381
+longitude: 143.581248
+maps_url: "https://maps.google.com/?q=14+Skene+St+Colac+VIC+3250"
+
+# Opening hours. `open`/`close` are 24h local (Australia/Melbourne) and drive
+# the schema.org markup, the printed hours, and the live open/closed indicator.
+timezone_name: "Australia/Melbourne"
 hours:
-  weekdays: "Monday - Friday: 8:30am - 5:00pm"
-  saturday: "Saturday: 9:00am - 12:00pm"
-  sunday: "Sunday: Closed"
+  - days: "Monday – Friday"
+    open: "08:30"
+    close: "17:00"
+    display: "8:30am – 5pm"
+    weekdays: [1, 2, 3, 4, 5]
+    schema: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+  - days: "Saturday"
+    open: "09:00"
+    close: "12:00"
+    display: "9am – 12pm"
+    weekdays: [6]
+    schema: ["Saturday"]
+  - days: "Sunday"
+    closed: true
+    display: "Closed"
+    weekdays: [0]
 
 # Social media
 facebook_username: mower.corner
 
+# Analytics (GA4) — only emitted on production builds, see _includes/analytics.html
+google_analytics: "G-WTDYR4J7RM"
+
 # SEO and accessibility settings
 lang: en-AU
 author: Mower Corner
-logo: /assets/images/logo.png
+logo: /assets/icon-512.png
 social:
   name: Mower Corner
   links:
     - https://www.facebook.com/mower.corner/
 
-# Keywords
-keywords: >
-  lawn mowers, ride-on mowers, zero turn mowers, chainsaws, whipper snippers, leaf blowers,
-  hedge trimmers, garden equipment, lawn care, outdoor power tools, brush cutters,
-  mower repairs, mower service, Stihl, Toro, Victa, Cub Cadet, outdoor power equipment
+# Social preview image (jekyll-seo-tag og:image / twitter:image on every page)
+defaults:
+  - scope: { path: "" }
+    values:
+      image: "https://res.cloudinary.com/dux48uumi/image/upload/w_1200,h_630,c_fill,g_auto/e_improve:outdoor:50/e_auto_color/e_vibrance:50/e_saturation:15/q_auto/v1500944801/mowercorner%20slideshow/DSCF6504.jpg"
 
-# Products
-products:
-  - name: "Lawn Mowers"
-    description: "Wide range of push mowers, self-propelled mowers and electric mowers"
-  - name: "Ride-on Mowers"
-    description: "Premium ride-on mowers for larger properties and professional use"
-  - name: "Zero Turn Mowers"
-    description: "High-performance zero turn mowers for maximum efficiency and precision"
-  - name: "Chainsaws"
-    description: "Professional and homeowner chainsaws for all cutting needs"
-  - name: "Brush Cutters & Whipper Snippers"
-    description: "Quality brush cutters and line trimmers for edge trimming and clearing"
-  - name: "Leaf Blowers & Vacuums"
-    description: "Powerful blowers and vacuum systems for garden cleanup"
-  - name: "Hedge Trimmers"
-    description: "Electric and petrol hedge trimmers for perfect garden maintenance"
+# Imagery (Cloudinary).
+cloudinary_base: "https://res.cloudinary.com/dux48uumi/image/upload"
+
+# Colour grade applied to every photo. The 2017 shop photography is flat and
+# underexposed, so the correction happens server-side at Cloudinary rather than
+# with CSS filters — auto white balance and vibrance need the actual pixels.
+#   e_improve:outdoor  auto exposure/contrast tuned for daylight scenes
+#   e_auto_color       white balance, which kills the grey cast
+#   e_vibrance         lifts muted colour without blowing out the already-saturated
+#   e_saturation       a small global top-up
+#   e_sharpen          recovers detail lost to the original soft focus
+photo_fx: "e_improve:outdoor:50/e_auto_color/e_vibrance:50/e_saturation:15/e_sharpen:70"
+hero_image: "v1500944801/mowercorner%20slideshow/DSCF6504.jpg"
+workshop_images:
+  - path: "v1500944801/mowercorner%20slideshow/DSCF6513.jpg"
+    alt: "The STIHL chainsaw and accessory wall at Mower Corner"
+  - path: "v1500944801/mowercorner%20slideshow/DSCF6510.jpg"
+    alt: "The Mower Corner shopfront on Skene Street, Colac"
+  - path: "v1500944801/mowercorner%20slideshow/DSCF6531.jpg"
+    alt: "A Mower Corner staff member with the pickup and delivery ute"
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-seo-tag
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/

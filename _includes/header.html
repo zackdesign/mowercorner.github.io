@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="shell header__inner">
+    {% include wordmark.html %}
+
+    <nav class="nav" aria-label="Sections">
+      <a href="{{ '/#service' | relative_url }}">Service</a>
+      <a href="{{ '/#range' | relative_url }}">Range</a>
+      <a href="{{ '/#brands' | relative_url }}">Brands</a>
+      <a href="{{ '/#visit' | relative_url }}">Visit</a>
+    </nav>
+
+    <div class="header__actions">
+      <a class="btn btn--primary" href="tel:{{ site.phone | remove: ' ' }}">
+        {% include icon.html name="phone" %}
+        <span class="header__phone-label">{{ site.phone }}</span>
+        <span class="visually-hidden">Call Mower Corner on {{ site.phone }}</span>
+      </a>
+    </div>
+  </div>
+</header>

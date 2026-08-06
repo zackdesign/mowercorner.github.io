@@ -1,0 +1,63 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HardwareStore",
+  "@id": "{{ site.url }}/#business",
+  "name": "Mower Corner",
+  "image": "{{ site.url }}/assets/icon-512.png",
+  "url": "{{ site.url }}",
+  "telephone": "{{ site.phone_intl }}",
+  "email": "{{ site.email }}",
+  "priceRange": "$$",
+  "description": {{ site.description | strip_newlines | strip | jsonify }},
+  "currenciesAccepted": "AUD",
+  "paymentAccepted": "Visa, Mastercard",
+  "sameAs": ["https://www.facebook.com/{{ site.facebook_username }}/"],
+  "hasMap": "{{ site.maps_url }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.street_address }}",
+    "addressLocality": "{{ site.locality }}",
+    "addressRegion": "{{ site.region }}",
+    "postalCode": "{{ site.postcode }}",
+    "addressCountry": "AU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ site.latitude }},
+    "longitude": {{ site.longitude }}
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Colac" },
+    { "@type": "AdministrativeArea", "name": "Western District, Victoria" }
+  ],
+  "openingHoursSpecification": [
+    {%- assign open_rows = site.hours | where_exp: "r", "r.closed != true" -%}
+    {%- for row in open_rows %}
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": {{ row.schema | jsonify }},
+      "opens": "{{ row.open }}",
+      "closes": "{{ row.close }}"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  "makesOffer": [
+    {%- for item in site.data.range %}
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": {{ item.name | jsonify }},
+        "description": {{ item.description | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  "brand": [
+    {%- for supplier in site.data.suppliers %}
+    { "@type": "Brand", "name": {{ supplier.name | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>

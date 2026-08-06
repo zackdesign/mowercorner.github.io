@@ -1,0 +1,17 @@
+---
+layout: null
+---
+{
+  "name": "Mower Corner",
+  "short_name": "Mower Corner",
+  "description": "Outdoor power equipment sales, service and spare parts in Colac, Victoria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14181a",
+  "theme_color": "#14181a",
+  "icons": [
+    { "src": "/assets/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

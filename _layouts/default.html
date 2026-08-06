@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include head.html %}
+    {% include analytics.html %}
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    {% include header.html %}
+    <main id="main">{{ content }}</main>
+    {% include footer.html %}
+    {% include schema.html %}
+
+    <script>
+      /* Opening hours, so the live status readout and the schema.org markup
+         are driven by the same source in _config.yml. */
+      window.MC_TZ = {{ site.timezone_name | jsonify }};
+      window.MC_HOURS = [
+        {%- for row in site.hours %}
+        { "days": {{ row.weekdays | jsonify }}, "open": {{ row.open | jsonify }}, "close": {{ row.close | jsonify }}, "closed": {{ row.closed | default: false }} }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ];
+    </script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  </body>
+</html>
