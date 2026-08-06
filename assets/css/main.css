@@ -595,17 +595,36 @@ a.plate__val:hover { color: var(--orange); }
    Range
    -------------------------------------------------------------------------- */
 
-.range__cc {
+/* Click & Collect runs through STIHL's shop, not ours — carry STIHL's own
+   mark so nobody assumes they can order a Briggs or a Victa through it. */
+.cc-panel {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem 1.25rem;
-  margin: 2rem 0 0;
+  gap: 1.25rem 1.75rem;
+  margin: 2.25rem 0 0;
+  padding: clamp(1.25rem, 1rem + 1.5vw, 1.75rem);
+  background: var(--paper);
+  border: 1px solid var(--zinc-line);
+  border-left: 4px solid #f37a1f; /* STIHL orange, not ours */
+  border-radius: var(--radius);
 }
-.range__cc .btn { border-color: var(--zinc-line); }
-.range__cc .btn:hover { background: rgba(0, 0, 0, 0.05); border-color: var(--ink); }
-.range__cc-note { color: var(--muted); font-size: 0.95rem; max-width: 44ch; }
-.range__cc-note strong { color: var(--ink); font-weight: 600; }
+.cc-panel__logo { flex: none; width: 120px; height: auto; }
+.cc-panel__body { flex: 1 1 24rem; }
+.cc-panel__title {
+  font-size: var(--step-1);
+  margin-bottom: 0.4rem;
+  font-variation-settings: "wdth" 108;
+}
+.cc-panel__body p { color: var(--muted); font-size: 0.95rem; margin: 0; }
+.cc-panel__body strong { color: var(--ink); font-weight: 600; }
+.cc-panel__scope {
+  display: block;
+  margin-top: 0.5rem;
+  font: 500 var(--step--1) / 1.5 var(--mono);
+  color: var(--orange-deep);
+}
+.cc-panel__cta { flex: none; }
 
 .range__grid {
   display: grid;

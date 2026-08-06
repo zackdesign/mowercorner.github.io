@@ -39,7 +39,7 @@ layout: default
         Book a service {% include icon.html name="arrow" %}
       </a>
       <a class="hero__shop" href="{{ site.stihl_shop_url }}" target="_blank" rel="noopener">
-        Or shop STIHL online for Click &amp; Collect {% include icon.html name="external" %}
+        Or buy STIHL online and collect in store {% include icon.html name="external" %}
       </a>
     </div>
 
@@ -127,12 +127,22 @@ layout: default
       equipment from the brands below. Tell us the block and we'll match the machine.
     </p>
 
-    <p class="range__cc">
-      <a class="btn btn--ghost" href="{{ site.stihl_shop_url }}" target="_blank" rel="noopener">
-        {% include icon.html name="arrow" %} Shop STIHL online for Click &amp; Collect
+    <aside class="cc-panel">
+      <img class="cc-panel__logo" src="{{ '/assets/images/brands/stihl.svg' | relative_url }}"
+           alt="STIHL" width="120" height="53" loading="lazy" decoding="async">
+      <div class="cc-panel__body">
+        <h3 class="cc-panel__title">Buy STIHL online, collect in store</h3>
+        <p>
+          Order from the STIHL online shop and choose <strong>Mower Corner</strong>
+          as your collection store — it'll be waiting at Skene Street.
+          <span class="cc-panel__scope">STIHL products only. For Toro, Victa, Cox,
+          Rover or anything else on this page, ring the shop.</span>
+        </p>
+      </div>
+      <a class="btn btn--primary cc-panel__cta" href="{{ site.stihl_shop_url }}" target="_blank" rel="noopener">
+        Go to the STIHL shop {% include icon.html name="external" %}
       </a>
-      <span class="range__cc-note">Choose <strong>Mower Corner</strong> as your store at checkout and pick it up at Skene Street.</span>
-    </p>
+    </aside>
 
     <div class="range__grid">
       {% for item in site.data.range %}

@@ -81,6 +81,10 @@ accessories online and pick them up here at Skene Street rather than waiting on
 a courier. Choose **Mower Corner** as your store and you'll see live
 availability against each product.
 
+This covers **STIHL products only**. For parts and machines from Toro, Victa,
+Cox, Rover, Cub Cadet, Briggs & Stratton or any other brand we carry, ring the
+shop — those don't go through the STIHL shop.
+
 Stock varies. Items we hold show as ready to collect; anything else shows
 "contact dealer for availability" — ring us and we'll tell you what we can get
 in and how long it takes.
