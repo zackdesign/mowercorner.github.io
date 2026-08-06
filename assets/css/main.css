@@ -711,6 +711,47 @@ a.plate__val:hover { color: var(--orange); }
 }
 
 /* --------------------------------------------------------------------------
+   Photo bands — full-bleed stills between sections
+   -------------------------------------------------------------------------- */
+
+.photoband img {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 32vw, 430px);
+  object-fit: cover;
+  filter: saturate(1.05);
+}
+
+/* A band with a photograph under its colour: the image sits beneath a deep
+   field-green scrim so the foreground text keeps its contrast. */
+.band--photo {
+  position: relative;
+  overflow: hidden;
+}
+.band--photo .band__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.band--photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(100deg,
+    rgba(16, 34, 21, 0.94) 0%,
+    rgba(23, 58, 34, 0.86) 45%,
+    rgba(29, 74, 43, 0.55) 100%);
+}
+.band--photo > .shell {
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
    Call band
    -------------------------------------------------------------------------- */
 
@@ -824,7 +865,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
 
 @media print {
   .header, .hero__media, .map, .workshop, .hero__actions, .callout__actions,
-  .hero::after { display: none; }
+  .hero::after, .photoband, .band--photo .band__bg { display: none; }
   body { background: #fff; color: #000; }
   .hero, .band--ink, .band--field, .plate, .footer, .page-header, .service {
     background: #fff !important;

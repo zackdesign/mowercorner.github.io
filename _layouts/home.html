@@ -85,6 +85,15 @@ layout: default
   </div>
 </section>
 
+<!-- Photo break: the tool of the trade ------------------------------------->
+<div class="photoband">
+  <img src="{{ '/assets/images/photos/service-saw.jpg' | relative_url }}"
+       srcset="{{ '/assets/images/photos/service-saw-1100.jpg' | relative_url }} 1100w,
+               {{ '/assets/images/photos/service-saw.jpg' | relative_url }} 2200w"
+       sizes="100vw" width="2200" height="850" loading="lazy" decoding="async"
+       alt="A well-used STIHL chainsaw resting on freshly cut logs">
+</div>
+
 <!-- Range ------------------------------------------------------------------>
 <section class="band" id="range">
   <div class="shell">
@@ -130,6 +139,16 @@ layout: default
     </div>
   </div>
 </section>
+
+
+<!-- Photo break: the result ------------------------------------------------>
+<div class="photoband">
+  <img src="{{ '/assets/images/photos/range-stripes.jpg' | relative_url }}"
+       srcset="{{ '/assets/images/photos/range-stripes-1100.jpg' | relative_url }} 1100w,
+               {{ '/assets/images/photos/range-stripes.jpg' | relative_url }} 2200w"
+       sizes="100vw" width="2200" height="850" loading="lazy" decoding="async"
+       alt="Fresh stripes across a big lawn, one mower still working in the corner">
+</div>
 
 <!-- Workshop ---------------------------------------------------------------->
 <section class="band band--ink" style="padding-bottom: 0;">
@@ -191,7 +210,13 @@ layout: default
 </section>
 
 <!-- Call ------------------------------------------------------------------->
-<section class="band band--field">
+<section class="band band--field band--photo">
+  <img class="band__bg"
+       src="{{ '/assets/images/photos/callout-paddock.jpg' | relative_url }}"
+       srcset="{{ '/assets/images/photos/callout-paddock-1100.jpg' | relative_url }} 1100w,
+               {{ '/assets/images/photos/callout-paddock.jpg' | relative_url }} 2200w"
+       sizes="100vw" width="2200" height="1200" loading="lazy" decoding="async"
+       alt="" aria-hidden="true">
   <div class="shell callout">
     <div>
       <p class="eyebrow eyebrow--field">Not sure what it needs?</p>
